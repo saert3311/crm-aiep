@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: crm_aiep_production
-  username: crm_aiep
-  password: <%= ENV['CRM_AIEP_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: ''

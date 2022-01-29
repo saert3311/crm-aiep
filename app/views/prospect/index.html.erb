@@ -1,0 +1,70 @@
+<main class="flex-shrink-0">
+<%= render "shared/header" %>
+<div class="container">
+    <div class="row">
+        <div class="col mb-3">
+        <h2>Prospectos</h2>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">1</h1>
+                <p class="text-center fw-bold">Prospectos</p>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">2</h1>
+                <p class="text-center fw-bold">Interesados</p>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">3</h1>
+                    <p class="text-center fw-bold">Clientes</p>
+            </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+        <table class="table table-striped">
+            <thead class="text-center">
+                <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Estatus</th>
+                <th scope="col">Ingresado por</th>
+                <th scope="col">Conversaciones</th>
+                <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <% @prospects.each do |p| %>
+                <tr>
+                    <th scope="row"><%= p.email %></th>
+                    <td><%= p.fname %> <%= p.lname %></td>
+                    <td><%= p.tel %></td>
+                    <td><%= p.status %></td>
+                    <td>admin@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-primary">1 <i class="far fa-comments"></i></button></td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="far fa-eye"></i></button>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"><i class="far fa-edit"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</main>
+<%= render "shared/footer" %>
